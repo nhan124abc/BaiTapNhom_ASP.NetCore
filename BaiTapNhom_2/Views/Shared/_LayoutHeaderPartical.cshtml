@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="@(ViewData["Title"]=="Trang chủ"?"active":"")"><a asp-area="" asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li class="@(ViewData["Title"] == "Trang Sản Phẩm" ? "active" : "")"><a asp-area="" asp-action="Products" asp-controller="Home">Product</a></li>
+                    
+                    <li class ="@(ViewData["Title"] == "Giỏ Hàng" ? "active" : "")"><a asp-area="" asp-action="Cart" asp-controller="Home">Cart</a></li>
+                    <li class="@(ViewData["Title"] == "Liên hệ" ? "active" : "")"><a asp-area="" asp-action="Contact" asp-controller="Home">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> <!-- End mainmenu area -->

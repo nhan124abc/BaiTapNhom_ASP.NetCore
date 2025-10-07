@@ -1,0 +1,85 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_AdminLayout";
+	ViewData["Title"] = "Trang chủ admin";
+}
+
+
+@model List<BaiTapNhom_2.Models.Product>
+
+<style>
+    div {
+        font-size: 13px; /* chỉnh chữ nhỏ */
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center text-primary" style="margin:20px 0;">
+                <span class="glyphicon glyphicon-list-alt"></span> Danh sách sản phẩm
+            </h2>
+
+            <table class="table table-bordered table-striped table-hover table-condensed">
+                <thead>
+                    <tr class="info text-center">
+                        <th>Mã SP</th>
+                        <th>Tên SP</th>
+                        <th>Đơn Giá</th>
+                        <th>Mô Tả</th>
+                        <th>Hình Ảnh</th>
+                        <th>Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@item.MaSP</td>
+                            <td>@item.TenSP</td>
+                            <td class="text-right text-danger">
+                                @string.Format("{0:N0} đ", item.DonGia)
+                            </td>
+                            <td>@item.MoTa</td>
+                            <td class="text-center">
+                                <img src="@item.HinhAnh" alt="Ảnh sản phẩm"
+                                     class="img-thumbnail" style="width:80px;height:auto;" />
+                            </td>
+                            <td class="text-center">
+                                <a href="@Url.Action("Edit", "Product", new { id = item.MaSP })"
+                                   class="btn btn-xs btn-warning">
+                                    <span class="glyphicon glyphicon-pencil"></span> Sửa
+                                </a>
+                                <a href="@Url.Action("Delete", "Product", new { id = item.MaSP })"
+                                   class="btn btn-xs btn-danger"
+                                   onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">
+                                    <span class="glyphicon glyphicon-trash"></span> Xóa
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <!-- Nút thêm sản phẩm -->
+            <div class="text-right" style="margin:15px 0;">
+                <a href="@Url.Action("Create", "Product")" class="btn btn-success">
+                    <span class="glyphicon glyphicon-plus"></span> Thêm sản phẩm mới
+                </a>
+            </div>
+
+            <!-- Phân trang Bootstrap 3 -->
+            <nav aria-label="Page navigation" class="text-center">
+                <ul class="pagination">
+                    <li><a href="#">«</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

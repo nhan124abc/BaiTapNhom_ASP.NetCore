@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"]= "Trang Sản Phẩm";
+}
+@model List<Product>
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Shop</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4">
+            <div class="single-product">
+                <div class="product-f-image">
+                <div class="panel-heading text-center">
+                    <h4>@item.TenSP</h4>
+                </div>
+                <div class="panel-body text-center">
+                        <div class="product-upper">
+                    <img src="@item.HinhAnh" alt="@item.TenSP" class="img-responsive center-block" style="max-height:200px;" />
+                        </div>
+                        <div class="product-carousel-price">
+                    <p><strong>Giá:</strong> @item.DonGia.ToString("N0") đ</p>
+                    </div>
+                    <p><strong>Khuyến mãi:</strong> @item.DonGiaKhuyenMai.ToString("N0") đ</p>
+                    <p class="text-muted" style="min-height:50px;">@item.MoTa</p>
+                </div>
+                    <div class="product-hover">
+                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                    </div>
+            </div>
+        </div>
+        </div>
+    }
+</div>
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <li class="@(i == ViewBag.CurrentPage ? "active" : "")">
+                <a asp-action="Index"
+                   asp-route-page="@i">
+                    @i
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

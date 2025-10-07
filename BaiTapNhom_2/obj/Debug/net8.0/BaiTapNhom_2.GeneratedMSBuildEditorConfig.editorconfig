@@ -1,0 +1,87 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BaiTapNhom_2
+build_property.RootNamespace = BaiTapNhom_2
+build_property.ProjectDir = D:\1\QLBH\emptyproject\BaiTapNhom_2\BaiTapNhom_2\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\1\QLBH\emptyproject\BaiTapNhom_2\BaiTapNhom_2
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Areas/Admin/Views/Home/AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxBZGRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Areas/Api/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXBpXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Home/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Home/Products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Shared/_LayoutFooterPartical.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGb290ZXJQYXJ0aWNhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Shared/_LayoutHeaderPartical.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRIZWFkZXJQYXJ0aWNhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/1/QLBH/emptyproject/BaiTapNhom_2/BaiTapNhom_2/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ccjh5jxg2k

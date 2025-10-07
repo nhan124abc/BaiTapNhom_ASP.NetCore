@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_AdminLayout";
+}
+@model BaiTapNhom_2.Models.Product
+
+<div class="container">
+    <h3 class="text-primary">Thêm sản phẩm mới</h3>
+
+    <form asp-action="AddProduct" method="post"  class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!-- Tên SP -->
+        <div class="form-group">
+            <label class="control-label col-md-2">Tên SP</label>
+            <div class="col-md-6">
+                <input asp-for="TenSP" class="form-control" />
+                <span asp-validation-for="TenSP" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Đơn giá -->
+        <div class="form-group">
+            <label class="control-label col-md-2">Đơn giá</label>
+            <div class="col-md-6">
+                <input asp-for="DonGia" type="number" class="form-control" />
+                <span asp-validation-for="DonGia" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Đơn giá khuyến mãi -->
+        <div class="form-group">
+            <label class="control-label col-md-2">Đơn giá khuyến mãi</label>
+            <div class="col-md-6">
+                <input asp-for="DonGiaKhuyenMai" type="number" class="form-control" />
+                <span asp-validation-for="DonGiaKhuyenMai" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Loại SP -->
+        <div class="form-group">
+            <label class="control-label col-md-2">Loại sản phẩm</label>
+            <div class="col-md-6">
+                <input asp-for="LoaiSp" class="form-control" />
+                <span asp-validation-for="LoaiSp" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Mô tả -->
+        <div class="form-group">
+            <label class="control-label col-md-2">Mô tả</label>
+            <div class="col-md-6">
+                <textarea asp-for="MoTa" class="form-control"></textarea>
+                <span asp-validation-for="MoTa" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Hình ảnh (upload file) -->
+
+
+        <!-- Button -->
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <button type="submit" class="btn btn-success">
+                    <span class="glyphicon glyphicon-plus"></span> Thêm
+                </button>
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="btn btn-default">Quay lại</a>
+            </div>
+        </div>
+    </form>
+</div>

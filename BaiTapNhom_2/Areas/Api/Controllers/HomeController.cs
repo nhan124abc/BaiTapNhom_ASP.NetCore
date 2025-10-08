@@ -1,6 +1,5 @@
 ﻿using BaiTapNhom_2.Models;
 using BaiTapNhom_2.Service;
-using BaiTapNhom_2.Service.Ipl;
 using Microsoft.AspNetCore.Mvc;
 using Mysqlx;
 

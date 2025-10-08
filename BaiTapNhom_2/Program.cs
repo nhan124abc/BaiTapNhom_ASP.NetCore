@@ -1,4 +1,3 @@
-using BaiTapNhom_2.Middleware;
 using BaiTapNhom_2.Service;
 using BaiTapNhom_2.Service.Ipl;
 
@@ -14,6 +13,7 @@ namespace BaiTapNhom_2
             builder.Services.AddScoped<DIProduct>();
             builder.Services.AddScoped<DIConnectData>();
             builder.Services.AddScoped<TaiKhoanSevice, ITaiKhoanService>();
+            builder.Services.AddScoped<ProductService, IProductService>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -28,7 +28,6 @@ namespace BaiTapNhom_2
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseMiddleware<LoadProductsMiddleware>();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -41,6 +40,10 @@ namespace BaiTapNhom_2
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}"
+            );
+            app.MapControllerRoute(
+                name: "product",
+                pattern: "{controller=Home}/{action=Products}/{id?}"
             );
 
             app.Run();

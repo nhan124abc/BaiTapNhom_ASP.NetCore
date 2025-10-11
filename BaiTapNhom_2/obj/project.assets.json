@@ -1609,23 +1609,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anhvu\\.nuget\\packages\\": {},
+    "C:\\Users\\NGOC BICH\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\1\\QLBH\\emptyproject\\BaiTapNhom_2\\BaiTapNhom_2\\BaiTapNhom_2.csproj",
+      "projectUniqueName": "D:\\ASP.NET\\QLBH\\BaiTapNhom_ASP.NetCore\\BaiTapNhom_2\\BaiTapNhom_2.csproj",
       "projectName": "BaiTapNhom_2",
-      "projectPath": "D:\\1\\QLBH\\emptyproject\\BaiTapNhom_2\\BaiTapNhom_2\\BaiTapNhom_2.csproj",
-      "packagesPath": "C:\\Users\\anhvu\\.nuget\\packages\\",
-      "outputPath": "D:\\1\\QLBH\\emptyproject\\BaiTapNhom_2\\BaiTapNhom_2\\obj\\",
+      "projectPath": "D:\\ASP.NET\\QLBH\\BaiTapNhom_ASP.NetCore\\BaiTapNhom_2\\BaiTapNhom_2.csproj",
+      "packagesPath": "C:\\Users\\NGOC BICH\\.nuget\\packages\\",
+      "outputPath": "D:\\ASP.NET\\QLBH\\BaiTapNhom_ASP.NetCore\\BaiTapNhom_2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\anhvu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NGOC BICH\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1634,6 +1634,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1652,7 +1653,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -1682,7 +1683,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

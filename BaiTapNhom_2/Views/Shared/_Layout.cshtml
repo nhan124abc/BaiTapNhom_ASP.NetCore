@@ -31,7 +31,17 @@
                             <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
                             <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
                             <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+
+                            @if (Context.Session.GetInt32("MaTK") == null)
+                            {
+                                <li><a asp-controller="TaiKhoan" asp-action="Login"><i class="fa fa-user"></i> Login</a></li>
+                            }
+                            else
+                            {
+                                <li><a asp-controller="TaiKhoan" asp-action="Logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                            }
+
+
                         </ul>
                     </div>
                 </div>

@@ -28,6 +28,7 @@ namespace BaiTapNhom_2.Areas.Admin.Controllers
         {
             var product = dIProduct.products;
 
+
             return View(product);
         }
         [HttpPost]
@@ -56,6 +57,7 @@ namespace BaiTapNhom_2.Areas.Admin.Controllers
             return View();
 
         }
+       
 
 
 

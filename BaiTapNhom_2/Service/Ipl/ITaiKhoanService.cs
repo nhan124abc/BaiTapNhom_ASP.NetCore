@@ -25,6 +25,20 @@ namespace BaiTapNhom_2.Service.Ipl
            
             return cmd.ExecuteNonQuery() > 0;
         }
+        public bool Login(TaiKhoan tk)
+        {
+            using var conn = _data.Connect();
+            conn.Open();
+
+            var cmd = new MySqlCommand(
+               "INSERT INTO TaiKhoan (TenTK, LoaiTK, MatKhau, TrangThaiTK) VALUES (@TenTK, 0, @MatKhau, 1)", conn);
+            cmd.Parameters.AddWithValue("@TenTK", tk.TenTK);
+
+            cmd.Parameters.AddWithValue("@MatKhau", tk.MatKhau);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
 
     }
 }

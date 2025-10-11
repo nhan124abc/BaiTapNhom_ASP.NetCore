@@ -1,0 +1,10 @@
+﻿@model List<BaiTapNhom_2.Models.DanhMucSP>
+
+<select name="MaDM" id="MaDM" class="form-control">
+    <option value="">-- Chọn danh mục --</option>
+    @foreach (var item in Model)
+    {
+        <option value="@item.MaDM">@item.TenDM</option>
+    }
+</select>
+<button type="button" class="btn btn-sm btn-success mt-2" onclick="openModal()">+ Thêm danh mục</button>

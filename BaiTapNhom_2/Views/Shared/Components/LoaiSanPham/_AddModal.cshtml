@@ -1,0 +1,104 @@
+﻿<div id="addCategoryModal" class="modal-overlay">
+    <div class="modal-box">
+        <h4>Thêm danh mục mới</h4>
+        <hr />
+        <div class="form-group">
+            <label>Tên danh mục</label>
+            <input type="text" id="newCategoryName" class="form-control" required />
+        </div>
+        <div class="text-end mt-3">
+            <button id="btnAddCategory" class="btn btn-primary">Lưu</button>
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Đóng</button>
+        </div>
+    </div>
+</div>
+<style>
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        width: 400px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function openModal() {
+        $("#addCategoryModal").css("display", "flex");
+    }
+
+    function closeModal() {
+        $("#addCategoryModal").hide();
+    }
+
+
+      // ... các hàm openModal và closeModal ...
+
+         // ⭐ Hàm chính được gọi khi nhấn nút Lưu (btnAddCategory)
+    $("#btnAddCategory").click(function () {
+        const newName = $("#newCategoryName").val().trim();
+
+        if (newName === "") {
+            alert("Vui lòng nhập tên danh mục!");
+            return;
+        }
+
+        // ⭐ BƯỚC 1: KIỂM TRA TÊN DANH MỤC TRÊN DROPDOWN ĐÃ LOAD
+        let isExist = false;
+
+        // Duyệt qua tất cả các option trong dropdown #MaDM
+        // .text() lấy nội dung hiển thị (TenDM) của option
+        $("#MaDM option").each(function () {
+            // So sánh tên mới nhập với nội dung của từng option (không phân biệt hoa thường)
+            if ($(this).text().trim().toLowerCase() === newName.toLowerCase()) {
+                isExist = true;
+                return false; // Dừng vòng lặp .each() ngay khi tìm thấy
+            }
+        });
+
+        if (isExist) {
+            // Nếu tên đã tồn tại
+            alert(`Tên danh mục "${newName}" đã tồn tại! Vui lòng chọn tên khác.`);
+        } else {
+            // ⭐ BƯỚC 2: THỰC HIỆN THÊM NẾU TÊN CHƯA TỒN TẠI
+            addCategoryAjax(newName);
+        }
+    });
+
+    // Hàm để gọi API thêm danh mục (không thay đổi)
+    function addCategoryAjax(name) {
+        $.ajax({
+            url: "/api/AddCategory/AddCategory",
+            method: "POST",
+            data: { TenDanhMuc: name },
+            success: function (res) {
+                if (res.success) {
+                    alert("Thêm danh mục thành công!");
+                    // Tải lại trang sau khi thêm thành công
+                    location.reload();
+                } else {
+                    alert("Không thể thêm danh mục!");
+                }
+            },
+            error: function () {
+                alert("Lỗi kết nối API thêm danh mục!");
+            }
+        });
+    }
+
+</script>

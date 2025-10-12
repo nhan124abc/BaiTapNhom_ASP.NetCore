@@ -3,6 +3,7 @@
     public class Product
     {
 
+
         public int MaSP { get; set; }
         public string TenSP { get; set; }
         public string MoTa { get; set; }
@@ -10,6 +11,7 @@
         public string HinhAnh { get; set; }
         public string LoaiSp { get; set; }
         public double DonGiaKhuyenMai { get; set; }
+
 
     }
 }

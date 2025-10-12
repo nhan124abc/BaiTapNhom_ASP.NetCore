@@ -1,12 +1,13 @@
 ﻿using BaiTapNhom_2.Models;
+using BaiTapNhom_2.Service;
 using BaiTapNhom_2.Service.Ipl;
 using Microsoft.AspNetCore.Mvc;
 
 public class TaiKhoanController : Controller
 {
-    private readonly ITaiKhoanService _taiKhoanService;
+    private readonly TaiKhoanSevice _taiKhoanService;
 
-    public TaiKhoanController(ITaiKhoanService taiKhoanService)
+    public TaiKhoanController(TaiKhoanSevice taiKhoanService)
     {
         _taiKhoanService = taiKhoanService;
     }
@@ -30,7 +31,7 @@ public class TaiKhoanController : Controller
         {
             // Lưu thông tin vào session
             HttpContext.Session.SetInt32("MaTK", tk.MaTK);
-            HttpContext.Session.SetString("TenDN", tk.TenDN ?? "");
+            HttpContext.Session.SetString("TenDN", tk.TenTK ?? "");
             HttpContext.Session.SetInt32("LoaiTK", tk.LoaiTK);
 
             // Chuyển hướng theo loại tài khoản

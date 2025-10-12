@@ -6,7 +6,7 @@ namespace BaiTapNhom_2.Service
 {
 
 
-    public class TaiKhoanService : ITaiKhoanService
+    public class TaiKhoanService : TaiKhoanSevice
     {
         private readonly DIConnectData _data;
 
@@ -61,7 +61,7 @@ namespace BaiTapNhom_2.Service
                 return new TaiKhoan
                 {
                     MaTK = reader.GetInt32("MaTK"),
-                    TenDN = reader.GetString("TenTK"),
+                    TenTK = reader.GetString("TenTK"),
                     LoaiTK = reader.GetInt32("LoaiTK")
                 };
             }
@@ -74,9 +74,9 @@ namespace BaiTapNhom_2.Service
             conn.Open();
 
             var cmd = new MySqlCommand(
-                "INSERT INTO TaiKhoan (TenDN, LoaiTK, MatKhau, TrangThai) VALUES (@TenDN, @LoaiTK, @MatKhau, @TrangThai)",
+                "INSERT INTO TaiKhoan (TenTK, LoaiTK, MatKhau, TrangThai) VALUES (@TenDN, @LoaiTK, @MatKhau, @TrangThai)",
                 conn);
-            cmd.Parameters.AddWithValue("@TenDN", tk.TenDN);
+            cmd.Parameters.AddWithValue("@TenDN", tk.TenTK);
             cmd.Parameters.AddWithValue("@LoaiTK", tk.LoaiTK);
             cmd.Parameters.AddWithValue("@MatKhau", tk.MatKhau);
             cmd.Parameters.AddWithValue("@TrangThai", tk.TrangThai);
@@ -101,22 +101,14 @@ namespace BaiTapNhom_2.Service
             return cmd.ExecuteNonQuery() > 0;
         }
 
-        public bool Delete(int maTK)
-        {
-            using var conn = _data.Connect();
-            conn.Open();
-
-            var cmd = new MySqlCommand("DELETE FROM TaiKhoan WHERE MaTK = @MaTK", conn);
-            cmd.Parameters.AddWithValue("@MaTK", maTK);
-            return cmd.ExecuteNonQuery() > 0;
-        }
+      
 
         private TaiKhoan MapToTaiKhoan(MySqlDataReader reader)
         {
             return new TaiKhoan
             {
                 MaTK = reader.GetInt32("MaTK"),
-                TenDN = reader["TenDN"].ToString(),
+                TenTK = reader["TenTK"].ToString(),
                 LoaiTK = Convert.ToInt32(reader["LoaiTK"]),
                 MatKhau = reader["MatKhau"].ToString(),
                 TrangThai = Convert.ToInt32(reader["TrangThai"])

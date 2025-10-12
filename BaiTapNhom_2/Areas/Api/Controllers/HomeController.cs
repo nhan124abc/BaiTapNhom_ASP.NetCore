@@ -1,7 +1,10 @@
 ﻿using BaiTapNhom_2.Models;
+
 using BaiTapNhom_2.Service.Ipl;
+
+using BaiTapNhom_2.Service;
+
 using Microsoft.AspNetCore.Mvc;
-using Mysqlx;
 
 namespace BaiTapNhom_2.Areas.Api.Controllers
 {
@@ -24,12 +27,31 @@ namespace BaiTapNhom_2.Areas.Api.Controllers
         {
             if (Itk.Add(tk))
             {
-                return Ok("add okkk");
+                return Ok(tk);
             }
             else {
                 return Ok("nooooooooo");
             }
            
+        }
+        [HttpPost]
+        public IActionResult login(TaiKhoan tk)
+        {
+            if (Itk.Add(tk))
+            {
+                return Ok(tk);
+            }
+            else
+            {
+                return Ok("nooooooooo");
+            }
+
+        }
+        [HttpGet]
+        public IActionResult login()
+        {
+            return View();
+
         }
     }
 }

@@ -1,5 +1,7 @@
-using BaiTapNhom_2.Middleware;
+
+
 using BaiTapNhom_2.Middlewares;
+
 using BaiTapNhom_2.Service;
 using BaiTapNhom_2.Service.Ipl;
 
@@ -14,8 +16,11 @@ namespace BaiTapNhom_2
             // Add services to the container.
             builder.Services.AddScoped<DIProduct>();
             builder.Services.AddScoped<DIConnectData>();
-            builder.Services.AddScoped<TaiKhoanSevice, ITaiKhoanService>();
+            builder.Services.AddScoped<TaiKhoanSevice, TaiKhoanService>();
             builder.Services.AddScoped<ProductService, IProductService>();
+
+            builder.Services.AddScoped<CategoryService, ICategory>();
+
             builder.Services.AddControllersWithViews();
             builder.Services.AddHttpContextAccessor();
 
@@ -39,7 +44,6 @@ namespace BaiTapNhom_2
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseMiddleware<LoadProductsMiddleware>();
             app.UseRouting();
             app.UseSession();
             app.UseMiddleware<AdminAuthMiddleware>();
@@ -54,10 +58,12 @@ namespace BaiTapNhom_2
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}"
             );
+
             app.MapControllerRoute(
                 name: "product",
                 pattern: "{controller=Home}/{action=Products}/{id?}"
             );
+
 
             app.Run();
         }

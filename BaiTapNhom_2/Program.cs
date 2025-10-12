@@ -1,4 +1,5 @@
 using BaiTapNhom_2.Middleware;
+using BaiTapNhom_2.Middlewares;
 using BaiTapNhom_2.Service;
 using BaiTapNhom_2.Service.Ipl;
 
@@ -41,8 +42,7 @@ namespace BaiTapNhom_2
             app.UseMiddleware<LoadProductsMiddleware>();
             app.UseRouting();
             app.UseSession();
-            app.UseAdminAuth();
-
+            app.UseMiddleware<AdminAuthMiddleware>();
             app.UseAuthorization();
 
             app.MapControllerRoute(

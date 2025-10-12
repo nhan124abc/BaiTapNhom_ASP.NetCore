@@ -24,7 +24,10 @@
                     </div>
                     <div class="panel-body text-center">
                         <div class="product-upper">
-                            <img src="@item.HinhAnh" alt="@item.TenSP" class="img-responsive center-block" style="max-height:200px;" />
+                            <img src="@Url.Content("~/img/" + (item.HinhAnh?.Split(';')[0] ?? ""))"
+                                 alt="@item.TenSP"
+                                 class="img-responsive center-block"
+                                 style="max-height:200px;" />
                         </div>
                         <div class="product-carousel-price">
                             <p><strong>Giá:</strong> @item.Gia.ToString("N0") đ</p>

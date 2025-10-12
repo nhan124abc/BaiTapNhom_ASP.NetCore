@@ -6,5 +6,6 @@ namespace BaiTapNhom_2.Service
     {
         List<TaiKhoan> Getall();
         bool Add(TaiKhoan t);
+        bool Login(TaiKhoan t);
     }
 }

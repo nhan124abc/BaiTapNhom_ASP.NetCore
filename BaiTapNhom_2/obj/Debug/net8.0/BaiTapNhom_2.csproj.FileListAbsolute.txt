@@ -69,7 +69,6 @@ D:\school\asp.net\BaiTapNhom_2\BaiTapNhom_2\obj\Debug\net8.0\BaiTapNhom_2.genrun
 D:\school\asp.net\BaiTapNhom_2\BaiTapNhom_2\obj\Debug\net8.0\ref\BaiTapNhom_2.dll
 D:\1\QLBH\emptyproject\BaiTapNhom_2\BaiTapNhom_2\bin\Debug\net8.0\appsettings.Development.json
 D:\1\QLBH\emptyproject\BaiTapNhom_2\BaiTapNhom_2\bin\Debug\net8.0\appsettings.json
-D:\1\QLBH\emptyproject\BaiTapNhom_2\BaiTapNhom_2\bin\Debug\net8.0\db.json
 D:\1\QLBH\emptyproject\BaiTapNhom_2\BaiTapNhom_2\bin\Debug\net8.0\BaiTapNhom_2.staticwebassets.runtime.json
 D:\1\QLBH\emptyproject\BaiTapNhom_2\BaiTapNhom_2\bin\Debug\net8.0\BaiTapNhom_2.staticwebassets.endpoints.json
 D:\1\QLBH\emptyproject\BaiTapNhom_2\BaiTapNhom_2\bin\Debug\net8.0\BaiTapNhom_2.exe
@@ -182,3 +181,4 @@ D:\school\BaiTapNhom\BaiTapNhom_ASP.NetCore\BaiTapNhom_2\obj\Debug\net8.0\static
 D:\school\BaiTapNhom\BaiTapNhom_ASP.NetCore\BaiTapNhom_2\obj\Debug\net8.0\BaiTapNh.8C3C1E0A.Up2Date
 D:\school\BaiTapNhom\BaiTapNhom_ASP.NetCore\BaiTapNhom_2\obj\Debug\net8.0\BaiTapNhom_2.genruntimeconfig.cache
 D:\school\BaiTapNhom\BaiTapNhom_ASP.NetCore\BaiTapNhom_2\obj\Debug\net8.0\ref\BaiTapNhom_2.dll
+D:\1\QLBH\emptyproject\BaiTapNhom_2\BaiTapNhom_2\obj\Debug\net8.0\BaiTapNhom_2.sourcelink.json

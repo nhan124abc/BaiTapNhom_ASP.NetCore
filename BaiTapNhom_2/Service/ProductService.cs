@@ -5,5 +5,6 @@ namespace BaiTapNhom_2.Service
     {
         List<Product> GetAll();
         Product GetById(int id);
+
     }
 }

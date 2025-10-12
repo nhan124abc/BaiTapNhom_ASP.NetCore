@@ -14,6 +14,7 @@ namespace BaiTapNhom_2
             builder.Services.AddScoped<DIConnectData>();
             builder.Services.AddScoped<TaiKhoanSevice, ITaiKhoanService>();
             builder.Services.AddScoped<ProductService, IProductService>();
+            builder.Services.AddScoped<CategoryService, ICategory>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -41,10 +42,7 @@ namespace BaiTapNhom_2
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}"
             );
-            app.MapControllerRoute(
-                name: "product",
-                pattern: "{controller=Home}/{action=Products}/{id?}"
-            );
+            
 
             app.Run();
         }

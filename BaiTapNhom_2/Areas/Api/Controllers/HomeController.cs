@@ -24,12 +24,31 @@ namespace BaiTapNhom_2.Areas.Api.Controllers
         {
             if (Itk.Add(tk))
             {
-                return Ok("add okkk");
+                return Ok(tk);
             }
             else {
                 return Ok("nooooooooo");
             }
            
+        }
+        [HttpPost]
+        public IActionResult login(TaiKhoan tk)
+        {
+            if (Itk.Add(tk))
+            {
+                return Ok(tk);
+            }
+            else
+            {
+                return Ok("nooooooooo");
+            }
+
+        }
+        [HttpGet]
+        public IActionResult login()
+        {
+            return View();
+
         }
     }
 }

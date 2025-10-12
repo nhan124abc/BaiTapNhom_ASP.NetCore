@@ -3,15 +3,122 @@ using MySql.Data.MySqlClient;
 
 namespace BaiTapNhom_2.Service.Ipl
 {
-    public interface ITaiKhoanService
+    public class ITaiKhoanService : TaiKhoanSevice
     {
-        List<TaiKhoan> GetAll();
-        TaiKhoan? GetByTenDN(string tenDN);
-        TaiKhoan? DangNhap(string tenDN, string matKhau);
-        bool Add(TaiKhoan tk);
-        bool Update(TaiKhoan tk);
-        bool Delete(int maTK);
+        private readonly DIConnectData _data;
+        public ITaiKhoanService(DIConnectData di)
+        {
+            _data = di;
+        }
+        public List<TaiKhoan> Getall()
+        {
+            return null;
+        }
+        public bool Add(TaiKhoan tk)
+        {
+            using var conn = _data.Connect();
+            conn.Open();
 
+            var cmd = new MySqlCommand(
+               "INSERT INTO TaiKhoan (TenTK, LoaiTK, MatKhau, TrangThaiTK) VALUES (@TenTK, 0, @MatKhau, 1)", conn);
+            cmd.Parameters.AddWithValue("@TenTK", tk.TenTK);
 
-    }
+            cmd.Parameters.AddWithValue("@MatKhau", tk.MatKhau);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+        public List<TaiKhoan> GetAll()
+        {
+            var list = new List<TaiKhoan>();
+            using var conn = _data.Connect();
+            conn.Open();
+
+            var cmd = new MySqlCommand("SELECT * FROM TaiKhoan", conn);
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(MapToTaiKhoan(reader));
+            }
+            return list;
+        }
+
+        public TaiKhoan? GetByTenDN(string tenDN)
+        {
+            using var conn = _data.Connect();
+            conn.Open();
+
+            var cmd = new MySqlCommand("SELECT * FROM TaiKhoan WHERE TenDN = @TenDN", conn);
+            cmd.Parameters.AddWithValue("@TenDN", tenDN);
+            using var reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+                return MapToTaiKhoan(reader);
+
+            return null;
+        }
+
+        public TaiKhoan? DangNhap(string tenDN, string matKhau)
+        {
+            string query = "SELECT * FROM TaiKhoan WHERE TenDN = @TenDN AND MatKhau = @MatKhau";
+            using var conn = _data.Connect();
+            conn.Open();
+
+            using var cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@TenDN", tenDN);
+            cmd.Parameters.AddWithValue("@MatKhau", matKhau);
+
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return new TaiKhoan
+                {
+                    MaTK = reader.GetInt32("MaTK"),
+                    TenDN = reader.GetString("TenDN"),
+                    LoaiTK = reader.GetInt32("LoaiTK")
+                };
+            }
+            return null;
+        }
+
+        public bool Update(TaiKhoan tk)
+        {
+            using var conn = _data.Connect();
+            conn.Open();
+
+            var cmd = new MySqlCommand(
+                "UPDATE TaiKhoan SET TenTK=@TenDN, LoaiTK=@LoaiTK, MatKhau=@MatKhau, TrangThai=@TrangThai WHERE MaTK=@MaTK",
+                conn);
+            cmd.Parameters.AddWithValue("@TenDN", tk.TenTK);
+            cmd.Parameters.AddWithValue("@LoaiTK", tk.LoaiTK);
+            cmd.Parameters.AddWithValue("@MatKhau", tk.MatKhau);
+            cmd.Parameters.AddWithValue("@TrangThai", tk.TrangThai);
+            cmd.Parameters.AddWithValue("@MaTK", tk.MaTK);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        public bool Delete(int maTK)
+        {
+            using var conn = _data.Connect();
+            conn.Open();
+
+            var cmd = new MySqlCommand("DELETE FROM TaiKhoan WHERE MaTK = @MaTK", conn);
+            cmd.Parameters.AddWithValue("@MaTK", maTK);
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        private TaiKhoan MapToTaiKhoan(MySqlDataReader reader)
+        {
+            return new TaiKhoan
+            {
+                MaTK = reader.GetInt32("MaTK"),
+                TenDN = reader["TenDN"].ToString(),
+                LoaiTK = Convert.ToInt32(reader["LoaiTK"]),
+                MatKhau = reader["MatKhau"].ToString(),
+                TrangThai = Convert.ToInt32(reader["TrangThai"])
+            };
+        }
+
+    
+}
 }

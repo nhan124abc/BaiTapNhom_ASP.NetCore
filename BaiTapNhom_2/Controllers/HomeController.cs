@@ -6,6 +6,7 @@ namespace BaiTapNhom_2.Controllers
     public class HomeController : Controller
     {
         private readonly DIProduct _diProduct;
+    
         private readonly ProductService _productSV;
         public HomeController(DIProduct diProduct, ProductService product)
         {
@@ -20,7 +21,15 @@ namespace BaiTapNhom_2.Controllers
 
         public IActionResult Products(int page = 1)
         {
-
+            int pageSize = 9;
+            var Product = _diProduct.products;
+            var products = Product
+                           .Skip((page - 1) * pageSize) // bỏ qua sản phẩm trước đó
+                           .Take(pageSize)              // lấy đúng số lượng
+                           .ToList();
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)Product.Count / pageSize);
+            return View(products);
             var list = _productSV.GetAll();
             return View(list);
         }

@@ -4,6 +4,7 @@ namespace BaiTapNhom_2.Models
 {
     public class Product
     {
+
         [Key]
         public int MaSP { get; set; }
         [Required(ErrorMessage = "Tên sản phẩm là bắt buộc.")]
@@ -28,6 +29,9 @@ namespace BaiTapNhom_2.Models
         public int MaDM { get; set; }
 
         public int TrangThaiSP { get; set; }
+
+        public double DonGiaKhuyenMai { get; set; }
+
 
     }
 }

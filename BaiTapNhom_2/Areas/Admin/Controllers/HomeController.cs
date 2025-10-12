@@ -32,6 +32,7 @@ namespace BaiTapNhom_2.Areas.Admin.Controllers
         {
             var product = productService.GetAll();
 
+
             return View(product);
         }
         [HttpPost]
@@ -48,8 +49,7 @@ namespace BaiTapNhom_2.Areas.Admin.Controllers
             return View();
 
         }
-        
-        
+       
 
 
 

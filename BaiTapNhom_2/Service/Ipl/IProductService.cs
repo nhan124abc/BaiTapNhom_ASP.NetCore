@@ -24,7 +24,7 @@ namespace BaiTapNhom_2.Service.Ipl
                     {
                         MaSP = reader.GetInt32("MaSP"),
                         TenSP = reader.GetString("TenSP"),
-                        Gia = reader.GetFloat("Gia"),
+                        DonGia = reader.GetFloat("Gia"),
                         HinhAnh = reader.GetString("HinhAnh")
                     });
                 }
@@ -47,7 +47,7 @@ namespace BaiTapNhom_2.Service.Ipl
                     {
                         MaSP = reader.GetInt32("MaSP"),
                         TenSP = reader.GetString("TenSP"),
-                        Gia = reader.GetFloat("Gia"),
+                        DonGia = reader.GetFloat("Gia"),
                         HinhAnh = reader.GetString("HinhAnh")
                     };
                 }

@@ -1,7 +1,10 @@
 ﻿using BaiTapNhom_2.Models;
+
+using BaiTapNhom_2.Service.Ipl;
+
 using BaiTapNhom_2.Service;
+
 using Microsoft.AspNetCore.Mvc;
-using Mysqlx;
 
 namespace BaiTapNhom_2.Areas.Api.Controllers
 {
@@ -10,8 +13,8 @@ namespace BaiTapNhom_2.Areas.Api.Controllers
     {
         private readonly DIConnectData _data;
         private readonly TaiKhoanSevice Itk;
-        public HomeController(DIConnectData _di,TaiKhoanSevice taiKhoanSevice) { 
-        Itk = taiKhoanSevice;
+        public HomeController(DIConnectData _di,TaiKhoanSevice taiKhoanService) { 
+        Itk = taiKhoanService;
         _data = _di;
         }
         [HttpGet]

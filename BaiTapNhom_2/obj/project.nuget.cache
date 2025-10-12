@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Rxwo2JPRVfI=",
+  "dgSpecHash": "UKx8jyAn3q0=",
   "success": true,
-  "projectFilePath": "D:\\1\\QLBH\\emptyproject\\BaiTapNhom_2\\BaiTapNhom_2\\BaiTapNhom_2.csproj",
+  "projectFilePath": "D:\\github\\BaiTapNhom_ASP.NetCore\\BaiTapNhom_2\\BaiTapNhom_2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anhvu\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "C:\\Users\\anhvu\\.nuget\\packages\\google.protobuf\\3.30.0\\google.protobuf.3.30.0.nupkg.sha512",

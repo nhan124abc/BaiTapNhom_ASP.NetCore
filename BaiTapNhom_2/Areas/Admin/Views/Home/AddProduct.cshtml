@@ -10,35 +10,39 @@
 <div class="container py-4">
     <h3 class="text-primary mb-4 border-bottom pb-2">Thêm sản phẩm mới</h3>
 
-    <form asp-action="AddProduct" method="post" class="needs-validation" novalidate>
+    <form asp-action="AddProduct" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
         <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
 
         <div class="mb-3 row">
             <label asp-for="TenSP" class="col-sm-3 col-form-label">Tên SP</label>
             <div class="col-sm-9">
-                <input asp-for="TenSP" class="form-control" required />
+                <input asp-for="TenSP" name="TenSP" class="form-control" required />
                 <span asp-validation-for="TenSP" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="SoLuong" class="col-sm-3 col-form-label">Số lượng</label>
+            <div class="col-sm-9">
+                <input asp-for="SoLuong" name="SoLuong" type="number" class="form-control" required />
+                <span asp-validation-for="SoLuong" class="text-danger"></span>
             </div>
         </div>
 
         <div class="row mb-3">
             <div class="col-md-6">
                 <div class="row">
-                    <label asp-for="DonGia" class="col-sm-6 col-form-label">Đơn giá</label>
+                    <label asp-for="Gia" class="col-sm-6 col-form-label">Đơn giá</label>
                     <div class="col-sm-6">
-                        <input asp-for="DonGia" type="number" class="form-control" required />
-                        <span asp-validation-for="DonGia" class="text-danger"></span>
+                        <input asp-for="Gia" name="Gia" type="number" class="form-control" required />
+                        <span asp-validation-for="Gia" class="text-danger"></span>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="row">
-                    <label asp-for="DonGiaKhuyenMai" class="col-sm-6 col-form-label">Đơn giá KM</label>
-                    <div class="col-sm-6">
-                        <input asp-for="DonGiaKhuyenMai" type="number" class="form-control" />
-                        <span asp-validation-for="DonGiaKhuyenMai" class="text-danger"></span>
-                    </div>
+                <label class="control-label col-md-2">Hình ảnh</label>
+                <div class="col-md-6">
+                    <input type="file" name="HinhAnhFiles" multiple class="form-control" />
                 </div>
             </div>
         </div>
@@ -53,7 +57,7 @@
         <div class="mb-4 row">
             <label asp-for="MoTa" class="col-sm-3 col-form-label">Mô tả</label>
             <div class="col-sm-9">
-                <textarea asp-for="MoTa" class="form-control" rows="4"></textarea>
+                <textarea asp-for="MoTa" name="MoTa" class="form-control" rows="4"></textarea>
                 <span asp-validation-for="MoTa" class="text-danger"></span>
             </div>
         </div>
@@ -68,4 +72,8 @@
         </div>
     </form>
 </div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
 @await Html.PartialAsync("~/Views/Shared/Components/LoaiSanPham/_AddModal.cshtml")

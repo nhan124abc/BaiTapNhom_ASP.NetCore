@@ -40,12 +40,16 @@
                             <td class="text-center">@item.MaSP</td>
                             <td>@item.TenSP</td>
                             <td class="text-right text-danger">
-                                @string.Format("{0:N0} đ", item.DonGia)
+                                @string.Format("{0:N0} đ", item.Gia)
                             </td>
                             <td>@item.MoTa</td>
                             <td class="text-center">
-                                <img src="@item.HinhAnh" alt="Ảnh sản phẩm"
-                                     class="img-thumbnail" style="width:80px;height:auto;" />
+                                @foreach (var img in item.HinhAnh?.Split(';') ?? new string[0])
+                                {
+                                    <img src="~/img/@item.HinhAnh" alt="Ảnh sản phẩm"
+                                         class="img-thumbnail" style="width:80px;height:auto;margin:2px;" />
+                                }
+
                             </td>
                             <td class="text-center">
                                 <a href="@Url.Action("Edit", "Product", new { id = item.MaSP })"

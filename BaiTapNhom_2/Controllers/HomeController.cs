@@ -32,7 +32,7 @@ namespace BaiTapNhom_2.Controllers
             ViewBag.TotalPages = (int)Math.Ceiling((double)list.Count / pageSize);
 
            
-            return View(list);
+            return View(products);
         }
        
 

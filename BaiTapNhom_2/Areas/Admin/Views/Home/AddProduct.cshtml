@@ -16,14 +16,14 @@
         <div class="mb-3 row">
             <label asp-for="TenSP" class="col-sm-3 col-form-label">Tên SP</label>
             <div class="col-sm-9">
-                <input asp-for="TenSP" name="TenSP" class="form-control" required />
+                <input asp-for="TenSP" class="form-control" required />
                 <span asp-validation-for="TenSP" class="text-danger"></span>
             </div>
         </div>
         <div class="mb-3 row">
             <label asp-for="SoLuong" class="col-sm-3 col-form-label">Số lượng</label>
             <div class="col-sm-9">
-                <input asp-for="SoLuong" name="SoLuong" type="number" class="form-control" required />
+                <input asp-for="SoLuong"  type="number" class="form-control" required />
                 <span asp-validation-for="SoLuong" class="text-danger"></span>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <div class="row">
                     <label asp-for="Gia" class="col-sm-6 col-form-label">Đơn giá</label>
                     <div class="col-sm-6">
-                        <input asp-for="Gia" name="Gia" type="number" class="form-control" required />
+                        <input asp-for="Gia" type="number" class="form-control" required />
                         <span asp-validation-for="Gia" class="text-danger"></span>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
         <div class="mb-4 row">
             <label asp-for="MoTa" class="col-sm-3 col-form-label">Mô tả</label>
             <div class="col-sm-9">
-                <textarea asp-for="MoTa" name="MoTa" class="form-control" rows="4"></textarea>
+                <textarea asp-for="MoTa"  class="form-control" rows="4"></textarea>
                 <span asp-validation-for="MoTa" class="text-danger"></span>
             </div>
         </div>

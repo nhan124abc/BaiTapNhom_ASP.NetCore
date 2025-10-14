@@ -50,7 +50,7 @@
         @for (int i = 1; i <= ViewBag.TotalPages; i++)
         {
             <li class="@(i == ViewBag.CurrentPage ? "active" : "")">
-                <a asp-action="Index"
+                <a asp-action="Products"
                    asp-route-page="@i">
                     @i
                 </a>
